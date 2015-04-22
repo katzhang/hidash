@@ -1,0 +1,22 @@
+{
+  "name": "hidash",
+  "description": "Exercies by rewriting some of lodash methods",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/katzhang/hidash.git"
+  },
+  "author": "Kat Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/katzhang/hidash/issues"
+  },
+  "homepage": "https://github.com/katzhang/hidash",
+  "dependencies": {
+    "mocha": "^2.2.4"
+  }
+}
