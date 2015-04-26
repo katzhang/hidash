@@ -10,6 +10,8 @@ var after = function(n, func) {
 	}
 };
 
+module.exports = after;
+
 var sayHi = function() {
 	console.log('hi');
 };
