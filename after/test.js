@@ -26,6 +26,23 @@ describe('the `after` function', function() {
 		aftered(counter);
 		assert.equal(counter, 0);
 	});
+
+	describe('when given wrong types of arguments', function() {
+		it('throws a type error', function() {
+			assert.throws(function() {
+				after(1, 1);
+			}, TypeError);
+		});
+
+	});
+
+	describe('when given reverse order of arguments', function() {
+		it('does not throw an error', function() {
+			assert.doesNotThrow(function() {
+				after(console.log, 1);
+			}, Error);
+		});
+	});
 });
 
 

@@ -1,4 +1,13 @@
 var after = function(n, func) {
+	if (typeof func !== 'function') {
+		if (typeof n === 'function' && !isNaN(func)) {
+			var temp = n;
+			n = func;
+			func = temp;
+		} else {
+			throw new TypeError();
+		}
+	}
 	var counter = 0;
 	return function() {
 		if (counter >= n) {
@@ -12,14 +21,3 @@ var after = function(n, func) {
 
 module.exports = after;
 
-var sayHi = function() {
-	console.log('hi');
-};
-
-var afterred = after(2, sayHi);
-
-afterred();
-afterred();
-afterred();
-afterred();
-afterred();
