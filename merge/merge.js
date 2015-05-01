@@ -5,7 +5,10 @@ var merge = function(destObj) {
 
 	for (var i = 0; i < sources.length; i++) {
 		currentSource = sources[i];
+		desObj = deepCopy(destObj, currentSource);
 	}
+
+	return destObj;
 };
 
 var deepCopy = function(destObj, sourceObj) {

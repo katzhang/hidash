@@ -55,4 +55,59 @@ describe('the `deepCopy` function', function() {
 
 });
 
+describe('the `merge` method', function() {
+	var dest, src1, src2;
+	it('merges one level properties from source objects', function() {
+		dest = {
+			foo: 1
+		};
+		src1 = {
+			bar: 2
+		};
+		src2 = {
+			mia: 3
+		};
+		var output = merge(dest, src1, src2);
+		assert.deepEqual(output, {
+			foo: 1,
+			bar: 2,
+			mia: 3
+		});
+	});
+	it('merges nested properties from source objects', function() {
+		dest = {};
+		src1 = {
+			foo: {
+				mia: 1
+			}
+		};
+		src2 = {
+			foo: {
+				bar: 2
+			}
+		}
+		var output = merge(dest, src1, src2);
+		assert.deepEqual(output, {
+			foo: {
+				mia: 1,
+				bar: 2
+			}
+		});
+	});
+	it('when merging overwrites previous source object with newer ones', function() {
+		dest = {};
+		src1 = {
+			foo: 1
+		};
+		src2 = {
+			foo: 2
+		};
+		var output = merge(dest, src1, src2);
+		assert.deepEqual(output, {
+			foo: 2
+		});
+	});
+
+});
+
 
