@@ -17,16 +17,5 @@ var flow = function() {
 	};
 };
 
-// var add = function(a, b) {
-// 	return a + b;
-// };
-
-// var multiply = function(a) {
-// 	return a * a;
-// };
-
-// var addMulti = flow(add, multiply);
-// console.log(addMulti(1, 2));
-
 module.exports = flow;
 
